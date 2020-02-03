@@ -37,6 +37,11 @@ set t_Co=256
 set diffopt=vertical
 set nofoldenable        " Ne rien cacher par défaut
 
+set omnifunc=syntaxcomplete#Complete
+set dictionary=/usr/share/bin/words
+set path+=**
+set tags=tags
+
 "<=== Configuration Raccourci Clavier ===>
 " Aller à l'onglet suivant
 nnoremap <C-Left>  :tabprevious<CR>
@@ -54,17 +59,18 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'thaerkh/vim-indentguides'
 Plugin 'w0rp/ale'
-"Plugin 'valloric/youcompleteme'
+
+
 Plugin 'ap/vim-css-color'
 Plugin 'nanotech/jellybeans.vim'            " Vim theme : colorscheme jellybeans
 Plugin 'tomasiser/vim-code-dark'            " Vim theme : colorscheme codedark
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'alvan/vim-closetag'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
+Plugin 'valloric/youcompleteme'
 
-Plugin 'lifepillar/vim-solarized8'
+Plugin 'tomtom/tcomment_vim'
 
 Plugin 'rrethy/vim-illuminate'
 Plugin 'KabbAmine/vCoolor.vim'
@@ -87,14 +93,17 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.php'
 
 let g:airline_section_b = '%{strftime("%c")}'
 
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :VCoolor<CR> 
 
-" autocmd FileType html inoremap <div <div><cr></div><esc>O
-" autocmd FileType html inoremap <body <body><cr></body><esc>O
+
+
+autocmd FileType html iabbrev div <div><cr></div><up>
+autocmd FileType html iabbrev body <body><cr></body><up>
 
 let g:netrw_banner=0        " disable annoying banner
+
+autocmd FileType c,cpp inoremap main int main(int ac, char **av)<right><CR>{<CR><CR>return (0);<CR>}<up><up><Tab>
+
+autocmd FileType cpp inoremap class class  {<CR>public:<CR>protected:<CR>private:<CR>};<up><up><up><up><right><right><right><right>
+
