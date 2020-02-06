@@ -10,8 +10,8 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 #variable
-user_login="alexis.potelle@epitech.eu"
-token="73be7f59d265bf5a3ad072d1e52ad3fbf4c4ce83938e1d455efe1fec53bee770effe177dbfa479821059fff13f38dbbd35fb213b5576533ca47f6b94b1973ceb"
+user_login="prenom.nom@epitech.eu"
+token=""
 
 # Path to your oh-my-zsh installation.
   export ZSH="/home/alexis/.oh-my-zsh"
@@ -56,8 +56,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 
-alias blih='blih -u alexis.potelle@epitech.eu'
-alias ns_auth='ns_auth -u alexis.potelle@epitech.eu'
+alias blih='blih -u prenom.nom@epitech.eu'
+alias ns_auth='ns_auth -u prenom.nom@epitech.eu'
 
 export PATH=$PATH:~/my_scripts/
 
@@ -85,9 +85,9 @@ alias branch='git branch'
 alias change='git checkout'
 alias log='git shortlog'
 alias open='gio open'
-alias setAcl='blih -u $user_login -t 73be7f59d265bf5a3ad072d1e52ad3fbf4c4ce83938e1d455efe1fec53bee770effe177dbfa479821059fff13f38dbbd35fb213b5576533ca47f6b94b1973ceb repository setacl $name_of_dir '
-alias checkAcl='blih -u $user_login -t 73be7f59d265bf5a3ad072d1e52ad3fbf4c4ce83938e1d455efe1fec53bee770effe177dbfa479821059fff13f38dbbd35fb213b5576533ca47f6b94b1973ceb repository getacl'
-alias repos='blih -u $user_login -t 73be7f59d265bf5a3ad072d1e52ad3fbf4c4ce83938e1d455efe1fec53bee770effe177dbfa479821059fff13f38dbbd35fb213b5576533ca47f6b94b1973ceb repository create $name_of_dir'
+alias setAcl='blih -u $user_login -t "" repository setacl $name_of_dir '
+alias checkAcl='blih -u $user_login -t "" repository getacl'
+alias repos='blih -u $user_login -t "" repository create $name_of_dir'
 
 export PATH=$PATH:$home/linuxbrew/.linuxbrew/bin
 
